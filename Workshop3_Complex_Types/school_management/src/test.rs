@@ -7,7 +7,7 @@ mod tests {
     #[test]
     fn test_case_1_it_show_empty_students_when_school_initialize() {
         let school: School<u32> = School::new();
-        assert_eq!(school.school_grades().len(), 0);
+        assert_eq!(school.school_grades(), vec![]);
     }
 
     #[test]
