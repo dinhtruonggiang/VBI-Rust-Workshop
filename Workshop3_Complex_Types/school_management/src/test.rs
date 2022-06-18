@@ -16,8 +16,9 @@ mod tests {
         school.add("Lee", 2);
         school.add("Nancy", 3);
 
-        let expected_grades = vec![&2, &3];
         let grades = school.school_grades(); 
+        let expected_grades = vec![2, 3];
+        
         assert_eq!(grades.len(), expected_grades.len());
         assert_eq!(grades, expected_grades);
     }
@@ -31,8 +32,9 @@ mod tests {
         school.add("Alice", 4);
 
         let filter_grade = 4;
-        let expected_students = vec!["Alice", "Bob"];
-        let same_grade_students = school.filter_same_grade_students(&filter_grade);
+        let same_grade_students = school.filter_same_grade_students(filter_grade);
+
+        let expected_students = vec!["Alice", "Bob"];        
         assert_eq!(same_grade_students.len(), expected_students.len());
         assert_eq!(same_grade_students, expected_students);
     }
@@ -44,8 +46,9 @@ mod tests {
         school.add("Lee", String::from("A+"));
         school.add("Nancy", String::from("B+"));
 
-        let expected_grades = vec![&"A+", &"B+"];
-        let grades = school.school_grades(); 
+        let grades = school.school_grades();
+        let expected_grades = vec!["A+", "B+"];
+        
         assert_eq!(grades.len(), expected_grades.len());
         assert_eq!(grades, expected_grades);
     }
@@ -59,8 +62,9 @@ mod tests {
         school.add("Peter", String::from("B+"));
 
         let filter_grade = String::from("B+");
+        let same_grade_students = school.filter_same_grade_students(filter_grade);
         let expected_students = vec!["Bob", "Peter"];
-        let same_grade_students = school.filter_same_grade_students(&filter_grade);
+        
         assert_eq!(same_grade_students.len(), expected_students.len());
         assert_eq!(same_grade_students, expected_students);
     }

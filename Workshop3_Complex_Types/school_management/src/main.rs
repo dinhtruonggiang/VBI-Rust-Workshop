@@ -11,7 +11,7 @@ fn main() {
 
 
 // fn main() {
-//     These cases are already in test.rs file    
+//     //These cases are already in test.rs file    
 //     let mut school: School<u32> = School::new();
 //     school.add("Peter", 10);
 //     school.add("Alice", 2);
@@ -19,6 +19,6 @@ fn main() {
 //     let grades = school.school_grades();
 //     println!("School grades: {:?}", grades);
 
-//     let same_grade_students = school.filter_same_grade_students(&2);
+//     let same_grade_students = school.filter_same_grade_students(2);
 //     println!("Same grade students: {:?}", same_grade_students);
 // }

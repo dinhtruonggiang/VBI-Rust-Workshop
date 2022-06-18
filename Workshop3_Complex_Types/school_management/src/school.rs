@@ -5,7 +5,7 @@ pub struct School<T> {
 }
 
 
-impl<T:Ord> School<T> {
+impl<T:Clone + Ord> School<T> {
     pub fn new() -> Self {
         Self { students: HashMap::new() }
     }
@@ -14,24 +14,21 @@ impl<T:Ord> School<T> {
         self.students.insert(name.to_string(), grade);
     }
 
-    pub fn school_grades(&self) -> Vec<&T> {
-        let mut grades: Vec<&T> = Vec::new();        
-        for g in  self.students.values() {
-            grades.push(g);            
-        }
-        grades.sort_unstable();
+    pub fn school_grades(&self) -> Vec<T> {
+        let mut grades: Vec<T> = self.students.values().cloned().collect();
+        grades.sort();
         grades.dedup();
         grades
     }
 
-    pub fn filter_same_grade_students(&mut self, grade: &T) -> Vec<&String> {
-        let mut students: Vec<&String> = Vec::new();        
+    pub fn filter_same_grade_students(&mut self, grade: T) -> Vec<String> {
+        let mut students: Vec<String> = Vec::new();        
         for (name, student_grade) in  self.students.iter() {
-            if student_grade == grade {
-                students.push(name);
+            if *student_grade == grade {
+                students.push(name.to_string());
             }   
         }
-        students.sort_unstable();
+        students.sort();
         students.dedup();
         students
     }
