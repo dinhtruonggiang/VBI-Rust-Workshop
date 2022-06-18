@@ -2,7 +2,7 @@
 // Mục đích: giải quyết vấn đề ownership và borrowing ko dùng clone()
 // Các bạn có thể sửa thêm logic để đúng với mục đichs bài này là liệt kê các số nguyên tố 
 fn main() {
-    let mut count: u32 = 1;
+    let mut count: u32 = 1; 
     let range = 10;
     let mut num: u64 = 1;
     let mut primes: Vec<u64> = Vec::new();
