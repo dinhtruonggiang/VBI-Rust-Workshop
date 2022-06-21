@@ -21,6 +21,18 @@ impl<T:Clone + Ord> School<T> {
         grades
     }
 
+    // pub fn school_grades_iter(&self) -> Vec<T> {
+    //     let mut grades: Vec<T> = Vec::new();
+    //     //self.students.values().cloned().collect();
+    //     for value in self.students.values() {
+    //         grades.push(*value);
+    //     }
+
+    //     grades.sort();
+    //     grades.dedup();
+    //     grades
+    // }
+
     pub fn filter_same_grade_students(&mut self, grade: T) -> Vec<String> {
         let mut students: Vec<String> = Vec::new();        
         for (name, student_grade) in  self.students.iter() {
