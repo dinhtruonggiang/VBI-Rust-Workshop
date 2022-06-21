@@ -21,6 +21,7 @@ impl<T:Clone + Ord> School<T> {
         grades
     }
 
+    // Do testing with looping 
     // pub fn school_grades_iter(&self) -> Vec<T> {
     //     let mut grades: Vec<T> = Vec::new();
     //     //self.students.values().cloned().collect();
